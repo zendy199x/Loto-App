@@ -1,4 +1,16 @@
-/** @type {import('next').NextConfig} */
-const nextConfig = {}
+const path = require("path");
 
-module.exports = nextConfig
+module.exports = {
+  reactStrictMode: true,
+  swcMinify: true,
+  images: {
+    domains: [],
+  },
+  output: "standalone",
+  webpack: (config, { isServer }) => {
+    // Fixes npm packages that depend on `fs` module
+    config.resolve.fallback = { fs: false };
+
+    return config;
+  },
+};
