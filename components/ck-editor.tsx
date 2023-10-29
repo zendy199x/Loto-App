@@ -1,13 +1,16 @@
-import React, { useEffect, useState } from 'react';
-import { CKEditor } from '@ckeditor/ckeditor5-react';
-import ClassicEditor from '@ckeditor/ckeditor5-build-classic';
+import React, { useEffect, useState } from "react";
+import { CKEditor } from "@ckeditor/ckeditor5-react";
+import ClassicEditor from "@ckeditor/ckeditor5-build-classic";
 
 interface CKEditorComponentProps {
   data: string;
   onChange: (data: string) => void;
 }
 
-const CKEditorComponent: React.FC<CKEditorComponentProps> = ({ data, onChange }) => {
+const CKEditorComponent: React.FC<CKEditorComponentProps> = ({
+  data,
+  onChange,
+}) => {
   const [editorData, setEditorData] = useState(data);
 
   useEffect(() => {
@@ -21,7 +24,11 @@ const CKEditorComponent: React.FC<CKEditorComponentProps> = ({ data, onChange })
   };
 
   return (
-    <CKEditor editor={ClassicEditor} data={editorData} onChange={handleChange} />
+    <CKEditor
+      editor={ClassicEditor}
+      data={editorData}
+      onChange={handleChange}
+    />
   );
 };
 
