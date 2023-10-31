@@ -136,7 +136,11 @@ export default function Update() {
               />
             </Form.Item>
             <Form.Item className="text-center">
-              <Button type="primary" htmlType="submit">
+              <Button
+                type="primary"
+                htmlType="submit"
+                className="bg-primary-green"
+              >
                 Update Loto Number
               </Button>
             </Form.Item>

@@ -17,7 +17,7 @@ const config: Config = {
         sans: [...defaultTheme.fontFamily.sans],
       },
       colors: {
-        "primary-blue": "#3F96FE",
+        "primary-green": "#52c41a",
         "primary-orange": "#FB6E2C",
       },
     },
