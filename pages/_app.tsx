@@ -11,7 +11,7 @@ import type { ReactElement, ReactNode } from "react";
 import { Suspense, useEffect, useState } from "react";
 import SEO from "../next-seo.config";
 import theme from "@/theme/themeConfig";
-import { ConfigProvider } from "antd";
+import { ConfigProvider, Spin } from "antd";
 
 export type NextPageWithLayout<P = unknown> = NextPage<P> & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -56,7 +56,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
       <DefaultSeo {...SEO} />
       <CacheProvider value={clientSideEmotionCache}>
         {getLayout(
-          <Suspense>
+          <Suspense fallback={<Spin />}>
             <ConfigProvider theme={theme}>
               <Component {...pageProps} />
             </ConfigProvider>
